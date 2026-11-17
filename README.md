@@ -11,3 +11,4 @@ A community-based club focused on sporting activities and social work.
 
 ## Website
 Official website coming soon.
+Lion's Sporting Club Official Website
