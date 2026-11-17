@@ -1,16 +1,43 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
+
+type Member = {
+  id: string;
+  name_bn: string | null;
+  name_en: string | null;
+  designation_bn: string | null;
+};
+
 export default function Home() {
+  const [members, setMembers] = useState<Member[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadCommittee() {
+      const { data, error } = await supabase
+        .from("committee_members")
+        .select("id, name_bn, name_en, designation_bn");
+
+      if (!error && data) {
+        setMembers(data as Member[]);
+      }
+
+      setLoading(false);
+    }
+
+    loadCommittee();
+  }, []);
+
   return (
     <main className="min-h-screen bg-white text-gray-800">
       <header className="bg-green-900 text-white px-6 py-5">
-        <h1 className="text-3xl font-bold">
-          Lion's Sporting Club
-        </h1>
+        <h1 className="text-3xl font-bold">Lion's Sporting Club</h1>
         <p className="mt-2 text-green-100">
           Building Unity, Building Community
         </p>
-        <p className="text-sm mt-1">
-          Established in 2012
-        </p>
+        <p className="text-sm mt-1">Established in 2012</p>
       </header>
 
       <nav className="bg-green-800 text-white px-6 py-3 flex flex-wrap gap-6">
@@ -55,22 +82,58 @@ export default function Home() {
           </div>
           <div className="bg-white p-6 rounded-xl shadow">
             <h3 className="font-bold text-xl">Social Work</h3>
-            <p className="mt-2">Community support and social initiatives.</p>
+            <p className="mt-2">
+              Community support and social initiatives.
+            </p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow">
             <h3 className="font-bold text-xl">Community</h3>
-            <p className="mt-2">Unity, friendship and development.</p>
+            <p className="mt-2">
+              Unity, friendship and development.
+            </p>
           </div>
         </div>
       </section>
 
-      <section id="committee" className="px-6 py-14 text-center">
-        <h2 className="text-2xl font-bold text-green-900">
+      <section id="committee" className="px-6 py-14 bg-white">
+        <h2 className="text-2xl font-bold text-green-900 text-center">
           Our Committee 2026–27
         </h2>
-        <p className="mt-4">
-          Meet the leadership of Lion's Sporting Club.
+        <p className="mt-3 text-center text-gray-600">
+          Lion's Sporting Club-এর কার্যনির্বাহী কমিটি
         </p>
+
+        {loading ? (
+          <p className="text-center mt-8">Loading Committee...</p>
+        ) : members.length === 0 ? (
+          <p className="text-center mt-8 text-gray-500">
+            Committee members will be published soon.
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto mt-10">
+            {members.map((member) => (
+              <div
+                key={member.id}
+                className="bg-green-50 border border-green-100 rounded-xl p-6 text-center shadow-sm"
+              >
+                <div className="w-16 h-16 rounded-full bg-green-800 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  {(member.name_bn || member.name_en || "L").charAt(0)}
+                </div>
+                <h3 className="font-bold text-lg text-green-900">
+                  {member.name_bn || member.name_en}
+                </h3>
+                {member.name_en && member.name_bn && (
+                  <p className="text-sm text-gray-500 mt-1">
+                    {member.name_en}
+                  </p>
+                )}
+                <p className="mt-2 text-green-800">
+                  {member.designation_bn}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section id="contact" className="bg-green-50 px-6 py-12 text-center">
