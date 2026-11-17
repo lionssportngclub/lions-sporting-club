@@ -1,115 +1,98 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
-
-export default function AdminDashboard() {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("checking");
-
-  useEffect(() => {
-    async function checkAdmin() {
-      const { data: authData, error: authError } =
-        await supabase.auth.getUser();
-
-      if (authError || !authData.user) {
-        router.replace("/admin/login");
-        return;
-      }
-
-      const { data: profile, error } = await supabase
-        .from("admin_profiles")
-        .select("role")
-        .eq("id", authData.user.id)
-        .maybeSingle();
-
-      if (error || !profile || profile.role !== "admin") {
-        setStatus("denied");
-        return;
-      }
-
-      setEmail(authData.user.email || "");
-      setStatus("allowed");
-    }
-
-    checkAdmin();
-  }, [router]);
-
-  async function handleLogout() {
-    await supabase.auth.signOut();
-    router.replace("/admin/login");
-  }
-
-  if (status === "checking") {
-    return (
-      <main className="p-10 text-center">
-        Checking admin access...
-      </main>
-    );
-  }
-
-  if (status === "denied") {
-    return (
-      <main className="min-h-screen flex flex-col items-center justify-center p-6">
-        <h1 className="text-2xl font-bold text-red-700">
-          Access Denied
-        </h1>
-        <p className="mt-3">You are not an authorized administrator.</p>
-        <button
-          onClick={handleLogout}
-          className="mt-5 bg-green-900 text-white px-6 py-3 rounded-lg"
-        >
-          Logout
-        </button>
-      </main>
-    );
-  }
-
-  const sections = [
-    "Committee Management",
-    "News Management",
-    "Events Management",
-    "Photo Gallery",
-    "Website Settings",
-  ];
-
+export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100">
-      <header className="bg-green-900 text-white p-5 flex justify-between items-center">
-        <div>
-          <h1 className="text-xl font-bold">Admin Dashboard</h1>
-          <p className="text-sm">Lion's Sporting Club</p>
-        </div>
-        <button
-          onClick={handleLogout}
-          className="bg-white text-green-900 px-4 py-2 rounded-lg"
-        >
-          Logout
-        </button>
+    <main className="min-h-screen bg-white text-gray-800">
+      <header className="bg-green-900 text-white px-6 py-5">
+        <h1 className="text-3xl font-bold">
+          Lion's Sporting Club
+        </h1>
+        <p className="mt-2 text-green-100">
+          Building Unity, Building Community
+        </p>
+        <p className="text-sm mt-1">
+          Established in 2012
+        </p>
       </header>
 
-      <section className="p-6 max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold mb-2">Welcome, Admin</h2>
-        <p className="text-gray-600 mb-7">{email}</p>
+      <nav className="bg-green-800 text-white px-6 py-3 flex flex-wrap gap-6">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#activities">Activities</a>
+        <a href="#committee">Committee</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {sections.map((section) => (
-            <div
-              key={section}
-              className="bg-white rounded-xl shadow p-6"
-            >
-              <h3 className="font-bold text-lg text-green-900">
-                {section}
-              </h3>
-              <p className="text-gray-500 text-sm mt-2">
-                Management section coming soon.
-              </p>
-            </div>
-          ))}
+      <section id="home" className="bg-green-50 px-6 py-20 text-center">
+        <h2 className="text-4xl font-bold text-green-900">
+          Welcome to Lion's Sporting Club
+        </h2>
+        <p className="mt-5 text-lg">
+          Sports, Social Work & Community Development
+        </p>
+        <p className="mt-3 text-gray-600">
+          ঐক্য গড়ি, সম্প্রীতি গড়ি, সমাজ গড়ি।
+        </p>
+      </section>
+
+      <section id="about" className="px-6 py-14 max-w-5xl mx-auto">
+        <h2 className="text-2xl font-bold text-green-900 mb-4">
+          About Our Club | আমাদের সম্পর্কে
+        </h2>
+        <p className="leading-8">
+          Lion's Sporting Club was established in 2012.
+          We are committed to promoting sports, social activities,
+          unity and community development.
+        </p>
+      </section>
+
+      <section id="activities" className="bg-gray-50 px-6 py-14">
+        <h2 className="text-2xl font-bold text-green-900 text-center mb-8">
+          Our Activities | আমাদের কার্যক্রম
+        </h2>
+        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          <div className="bg-white p-6 rounded-xl shadow">
+            <h3 className="font-bold text-xl">Sports</h3>
+            <p className="mt-2">Sports events and tournaments.</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow">
+            <h3 className="font-bold text-xl">Social Work</h3>
+            <p className="mt-2">Community support and social initiatives.</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow">
+            <h3 className="font-bold text-xl">Community</h3>
+            <p className="mt-2">Unity, friendship and development.</p>
+          </div>
         </div>
       </section>
+
+      <section id="committee" className="px-6 py-14 text-center">
+        <h2 className="text-2xl font-bold text-green-900">
+          Our Committee 2026–27
+        </h2>
+        <p className="mt-4">
+          Meet the leadership of Lion's Sporting Club.
+        </p>
+      </section>
+
+      <section id="contact" className="bg-green-50 px-6 py-12 text-center">
+        <h2 className="text-2xl font-bold text-green-900">
+          Contact Us
+        </h2>
+        <a
+          href="https://www.facebook.com/share/14zxHhQYh4G/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-5 bg-green-800 text-white px-6 py-3 rounded-lg"
+        >
+          Visit Our Facebook Page
+        </a>
+      </section>
+
+      <footer className="bg-green-950 text-white text-center p-6">
+        <p>Lion's Sporting Club © 2026</p>
+        <p className="text-sm mt-2">
+          Building Unity, Building Community
+        </p>
+      </footer>
     </main>
   );
 }
