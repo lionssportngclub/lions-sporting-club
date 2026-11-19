@@ -202,6 +202,25 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            {/* SEASON 02 SPONSORS */}
+            <div className="bg-white rounded-xl p-4 mt-4">
+              <h4 className="text-sm font-bold text-green-700 mb-3">
+                SEASON 02 SPONSORS
+              </h4>
+
+              <div className="space-y-2">
+                <p className="font-semibold text-gray-800">
+                  মাশরাফি মেডিকেল হল
+                </p>
+                <p className="font-semibold text-gray-800">
+                  T24 Technology
+                </p>
+                <p className="font-semibold text-gray-800">
+                  আবদুল মন্নান খান (কুয়েত প্রবাসী)
+                </p>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -354,4 +373,4 @@ export default function Home() {
 
     </main>
   );
-        }
+      }
