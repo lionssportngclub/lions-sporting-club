@@ -27,76 +27,7 @@ export default function Home() {
       setLoading(false);
     }
 
-  {/* TEAMS SECTION */}
-<section id="teams" className="py-16 px-4 bg-green-50">
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-10">
-      <h2 className="text-3xl font-bold text-green-800">
-        Our Teams
-      </h2>
-      <p className="text-gray-600 mt-2">
-        Lion's Sporting Club — 4 Teams
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      {/* Zenith */}
-      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
-        <h3 className="text-xl font-bold text-green-800 mb-3">
-          Lion's Zenith
-        </h3>
-        <div className="space-y-1">
-          {["Nazrul (C)", "Habib", "Rayhan Jr", "Johirul", "Imran", "Sohag", "Rayhan", "Sohrab"].map((name, i) => (
-            <p key={i}>{i + 1}. {name}</p>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-gray-500">Ex: Khoka</p>
-      </div>
-
-      {/* Dominion */}
-      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
-        <h3 className="text-xl font-bold text-green-800 mb-3">
-          Lion's Dominion
-        </h3>
-        <div className="space-y-1">
-          {["Ismail (C)", "Abubakar", "Shakib", "Alamin Rari", "Nahid", "Hasan", "Imam", "Joynal Jr"].map((name, i) => (
-            <p key={i}>{i + 1}. {name}</p>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-gray-500">Extra: Mamun</p>
-      </div>
-
-      {/* Vanguard */}
-      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
-        <h3 className="text-xl font-bold text-green-800 mb-3">
-          Lion's Vanguard
-        </h3>
-        <div className="space-y-1">
-          {["Mohasin", "Rifat", "Shakirul", "Alamin", "Sofikul", "Asraf", "Jahid", "Sojib"].map((name, i) => (
-            <p key={i}>{i + 1}. {name}</p>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-gray-500">Ex: Sabbir</p>
-      </div>
-
-      {/* Future Inferno */}
-      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
-        <h3 className="text-xl font-bold text-green-800 mb-3">
-          Lion's Future Inferno
-        </h3>
-        <div className="space-y-1">
-          {["Mahbub", "Mahim", "Siyam (C)", "Sabbir", "Solaiman", "Ajijul", "Shahin", "Rayhan"].map((name, i) => (
-            <p key={i}>{i + 1}. {name}</p>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-gray-500">Ex: Jihad</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-  loadCommittee();
+    loadCommittee();
   }, []);
 
   return (
@@ -113,7 +44,9 @@ export default function Home() {
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
         <a href="#activities">Activities</a>
+        <a href="#tournament-history">Tournament History</a>
         <a href="#committee">Committee</a>
+        <a href="#teams">Teams</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -161,71 +94,74 @@ export default function Home() {
               Unity, friendship and development.
             </p>
           </div>
-      
+        </div>
       </section>
-{/* TOURNAMENT HISTORY SECTION */}
-<section id="tournament-history" className="py-16 px-4 bg-white">
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-10">
-      <h2 className="text-3xl font-bold text-green-800">Tournament History</h2>
-      <p className="text-gray-600 mt-2">Lion's Sporting Club — Our Cricket Journey</p>
-    </div>
 
-    <div className="max-w-2xl mx-auto bg-green-50 rounded-2xl shadow-md p-6 border-l-4 border-green-600">
-      <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
-        <h3 className="text-xl font-bold text-green-800">Lion's Sporting Club Cricket Tournament</h3>
-        <span className="bg-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold">Season – 01</span>
-      </div>
-      <p className="text-gray-600 mb-4">2023</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-white rounded-xl p-4">
-          <p className="text-sm text-gray-500">Champion</p>
-          <p className="font-bold text-green-800">Lion's Sporting Club</p>
+      <section id="tournament-history" className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-green-800">
+              Tournament History
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lion's Sporting Club — Our Cricket Journey
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto bg-green-50 rounded-2xl shadow-md p-6 border-l-4 border-green-600">
+            <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
+              <h3 className="text-xl font-bold text-green-800">
+                Lion's Sporting Club Cricket Tournament
+              </h3>
+              <span className="bg-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Season – 01
+              </span>
+            </div>
+            <p className="text-gray-600 mb-4">2023</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white rounded-xl p-4">
+                <p className="text-sm text-gray-500">Champion</p>
+                <p className="font-bold text-green-800">
+                  Lion's Sporting Club
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-4">
+                <p className="text-sm text-gray-500">Runner-up</p>
+                <p className="font-bold text-gray-800">
+                  Chirakhola Young Star Sporting Club
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-2xl mx-auto bg-green-50 rounded-2xl shadow-md p-6 border-l-4 border-green-600 mt-6">
+            <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
+              <h3 className="text-xl font-bold text-green-800">
+                Lion's Sporting Club Cricket Tournament
+              </h3>
+              <span className="bg-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Season – 02
+              </span>
+            </div>
+            <p className="text-gray-600 mb-4">2024</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white rounded-xl p-4">
+                <p className="text-sm text-gray-500">Champion</p>
+                <p className="font-bold text-green-800">
+                  Unlimited Friendship
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-4">
+                <p className="text-sm text-gray-500">Runner-up</p>
+                <p className="font-bold text-gray-800">
+                  Lion's Sporting Club
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="bg-white rounded-xl p-4">
-          <p className="text-sm text-gray-500">Runner-up</p>
-          <p className="font-bold text-gray-800">Chirakhola Young Star Sporting Club</p>
-        </div>
-      </div>
-    </div>
-<div className="max-w-2xl mx-auto bg-green-50 rounded-2xl shadow-md p-6 border-l-4 border-green-600 mt-6">
-      <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
-        <h3 className="text-xl font-bold text-green-800">
-          Lion's Sporting Club Cricket Tournament
-        </h3>
-        <span className="bg-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-          Season – 02
-        </span>
-      </div>
+      </section>
 
-      <p className="text-gray-600 mb-4">2024</p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-white rounded-xl p-4">
-          <p className="text-sm text-gray-500">Champion</p>
-          <p className="font-bold text-green-800">Unlimited Friendship</p>
-        </div>
-        <div className="bg-white rounded-xl p-4">
-          <p className="text-sm text-gray-500">Runner-up</p>
-          <p className="font-bold text-gray-800">Lion's Sporting Club</p>
-        </div>
-      </div>
-    </div>
-
-  <p className="text-gray-600 mb-4">2024</p>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div className="bg-white rounded-xl p-4">
-      <p className="text-sm text-gray-500">Champion</p>
-      <p className="font-bold text-green-800">Unlimited Friendship</p>
-    </div>
-    <div className="bg-white rounded-xl p-4">
-      <p className="text-sm text-gray-500">Runner-up</p>
-      <p className="font-bold text-gray-800">Lion's Sporting Club</p>
-    </div>
-  </div>
-</div>
-</section>
       <section id="committee" className="px-6 py-14 bg-white">
         <h2 className="text-2xl font-bold text-green-900 text-center">
           Our Committee 2026–27
@@ -266,75 +202,62 @@ export default function Home() {
           </div>
         )}
       </section>
-{/* TEAMS SECTION */}
-<section id="teams" className="py-16 px-4 bg-green-50">
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-10">
-      <h2 className="text-3xl font-bold text-green-800">
-        Our Teams
-      </h2>
-      <p className="text-gray-600 mt-2">
-        Lion's Sporting Club — 4 Teams
-      </p>
-    </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section id="teams" className="py-16 px-4 bg-green-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-green-800">
+              Our Teams
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Lion's Sporting Club — 4 Teams
+            </p>
+          </div>
 
-      {/* Zenith */}
-      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
-        <h3 className="text-xl font-bold text-green-800 mb-3">
-          Lion's Zenith
-        </h3>
-        <div className="space-y-1">
-          {["Nazrul (C)", "Habib", "Rayhan Jr", "Johirul", "Imran", "Sohag", "Rayhan", "Sohrab"].map((name, i) => (
-            <p key={i}>{i + 1}. {name}</p>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
+              <h3 className="text-xl font-bold text-green-800 mb-3">Lion's Zenith</h3>
+              <div className="space-y-1">
+                {["Nazrul (C)", "Habib", "Rayhan Jr", "Johirul", "Imran", "Sohag", "Rayhan", "Sohrab"].map((name, i) => (
+                  <p key={i}>{i + 1}. {name}</p>
+                ))}
+              </div>
+              <p className="mt-4 text-sm text-gray-500">Ex: Khoka</p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
+              <h3 className="text-xl font-bold text-green-800 mb-3">Lion's Dominion</h3>
+              <div className="space-y-1">
+                {["Ismail (C)", "Abubakar", "Shakib", "Alamin Rari", "Nahid", "Hasan", "Imam", "Joynal Jr"].map((name, i) => (
+                  <p key={i}>{i + 1}. {name}</p>
+                ))}
+              </div>
+              <p className="mt-4 text-sm text-gray-500">Extra: Mamun</p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
+              <h3 className="text-xl font-bold text-green-800 mb-3">Lion's Vanguard</h3>
+              <div className="space-y-1">
+                {["Mohasin", "Rifat", "Shakirul", "Alamin", "Sofikul", "Asraf", "Jahid", "Sojib"].map((name, i) => (
+                  <p key={i}>{i + 1}. {name}</p>
+                ))}
+              </div>
+              <p className="mt-4 text-sm text-gray-500">Ex: Sabbir</p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
+              <h3 className="text-xl font-bold text-green-800 mb-3">Lion's Future Inferno</h3>
+              <div className="space-y-1">
+                {["Mahbub", "Mahim", "Siyam (C)", "Sabbir", "Solaiman", "Ajijul", "Shahin", "Rayhan"].map((name, i) => (
+                  <p key={i}>{i + 1}. {name}</p>
+                ))}
+              </div>
+              <p className="mt-4 text-sm text-gray-500">Ex: Jihad</p>
+            </div>
+          </div>
         </div>
-        <p className="mt-4 text-sm text-gray-500">Ex: Khoka</p>
-      </div>
+      </section>
 
-      {/* Dominion */}
-      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
-        <h3 className="text-xl font-bold text-green-800 mb-3">
-          Lion's Dominion
-        </h3>
-        <div className="space-y-1">
-          {["Ismail (C)", "Abubakar", "Shakib", "Alamin Rari", "Nahid", "Hasan", "Imam", "Joynal Jr"].map((name, i) => (
-            <p key={i}>{i + 1}. {name}</p>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-gray-500">Extra: Mamun</p>
-      </div>
-
-      {/* Vanguard */}
-      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
-        <h3 className="text-xl font-bold text-green-800 mb-3">
-          Lion's Vanguard
-        </h3>
-        <div className="space-y-1">
-          {["Mohasin", "Rifat", "Shakirul", "Alamin", "Sofikul", "Asraf", "Jahid", "Sojib"].map((name, i) => (
-            <p key={i}>{i + 1}. {name}</p>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-gray-500">Ex: Sabbir</p>
-      </div>
-
-      {/* Future Inferno */}
-      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
-        <h3 className="text-xl font-bold text-green-800 mb-3">
-          Lion's Future Inferno
-        </h3>
-        <div className="space-y-1">
-          {["Mahbub", "Mahim", "Siyam (C)", "Sabbir", "Solaiman", "Ajijul", "Shahin", "Rayhan"].map((name, i) => (
-            <p key={i}>{i + 1}. {name}</p>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-gray-500">Ex: Jihad</p>
-      </div>
-
-    </div>
-  </div>
-</section>
       <section id="contact" className="bg-green-50 px-6 py-12 text-center">
         <h2 className="text-2xl font-bold text-green-900">
           Contact Us
@@ -357,4 +280,4 @@ export default function Home() {
       </footer>
     </main>
   );
-}
+            }
