@@ -36,12 +36,12 @@ export default function Home() {
     "Babul Kazi",
     "Shahjahan Khan",
     "Abdul Mannan Khan",
-    "Mamun Sardar",
+    "Md Mamun Sardar",
     "Amir Kazi",
     "Asad Khan",
     "Engineer Rubel Khan",
     "Engineer Kazi Taslim",
-    "Chiddik Rari",
+    "Sidiuqe Rari",
     "Moyna Khanum",
   ];
 
@@ -49,7 +49,7 @@ export default function Home() {
     <main className="min-h-screen bg-white text-gray-800">
 
       {/* HEADER */}
-      <header className="bg-green-900 text-white px-6 py-5">
+      <header className="Amir900 text-white px-6 py-5">
         <h1 className="text-3xl font-bold">Lion's Sporting Club</h1>
         <p className="mt-2 text-green-100">
           Building Unity, Building Community
