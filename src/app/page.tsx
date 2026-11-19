@@ -161,13 +161,7 @@ export default function Home() {
               Unity, friendship and development.
             </p>
           </div>
-        </div><div className="max-w-2xl mx-auto bg-green-50 rounded-2xl shadow-md p-6 border-l-4 border-green-600 mt-6">
-  <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
-    <h3 className="text-xl font-bold text-green-800">
-      Lion's Sporting Club Cricket Tournament
-    <span className="bg-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-  Season – 02
-</span>
+      
       </section>
 {/* TOURNAMENT HISTORY SECTION */}
 <section id="tournament-history" className="py-16 px-4 bg-white">
