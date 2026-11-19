@@ -204,7 +204,75 @@ export default function Home() {
           </div>
         )}
       </section>
+{/* TEAMS SECTION */}
+<section id="teams" className="py-16 px-4 bg-green-50">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-10">
+      <h2 className="text-3xl font-bold text-green-800">
+        Our Teams
+      </h2>
+      <p className="text-gray-600 mt-2">
+        Lion's Sporting Club — 4 Teams
+      </p>
+    </div>
 
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      {/* Zenith */}
+      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
+        <h3 className="text-xl font-bold text-green-800 mb-3">
+          Lion's Zenith
+        </h3>
+        <div className="space-y-1">
+          {["Nazrul (C)", "Habib", "Rayhan Jr", "Johirul", "Imran", "Sohag", "Rayhan", "Sohrab"].map((name, i) => (
+            <p key={i}>{i + 1}. {name}</p>
+          ))}
+        </div>
+        <p className="mt-4 text-sm text-gray-500">Ex: Khoka</p>
+      </div>
+
+      {/* Dominion */}
+      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
+        <h3 className="text-xl font-bold text-green-800 mb-3">
+          Lion's Dominion
+        </h3>
+        <div className="space-y-1">
+          {["Ismail (C)", "Abubakar", "Shakib", "Alamin Rari", "Nahid", "Hasan", "Imam", "Joynal Jr"].map((name, i) => (
+            <p key={i}>{i + 1}. {name}</p>
+          ))}
+        </div>
+        <p className="mt-4 text-sm text-gray-500">Extra: Mamun</p>
+      </div>
+
+      {/* Vanguard */}
+      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
+        <h3 className="text-xl font-bold text-green-800 mb-3">
+          Lion's Vanguard
+        </h3>
+        <div className="space-y-1">
+          {["Mohasin", "Rifat", "Shakirul", "Alamin", "Sofikul", "Asraf", "Jahid", "Sojib"].map((name, i) => (
+            <p key={i}>{i + 1}. {name}</p>
+          ))}
+        </div>
+        <p className="mt-4 text-sm text-gray-500">Ex: Sabbir</p>
+      </div>
+
+      {/* Future Inferno */}
+      <div className="bg-white rounded-2xl shadow-md p-6 border-t-4 border-green-600">
+        <h3 className="text-xl font-bold text-green-800 mb-3">
+          Lion's Future Inferno
+        </h3>
+        <div className="space-y-1">
+          {["Mahbub", "Mahim", "Siyam (C)", "Sabbir", "Solaiman", "Ajijul", "Shahin", "Rayhan"].map((name, i) => (
+            <p key={i}>{i + 1}. {name}</p>
+          ))}
+        </div>
+        <p className="mt-4 text-sm text-gray-500">Ex: Jihad</p>
+      </div>
+
+    </div>
+  </div>
+</section>
       <section id="contact" className="bg-green-50 px-6 py-12 text-center">
         <h2 className="text-2xl font-bold text-green-900">
           Contact Us
