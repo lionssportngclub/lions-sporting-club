@@ -40,7 +40,7 @@ export default function Home() {
     "Amir Kazi",
     "Asad Khan",
     "Engineer Rubel Khan",
-    "Engineer Kazi Taslim",
+    "Engineer Kazi Toslim",
     "Sidiuqe Rari",
     "Moyna Khanum",
   ];
