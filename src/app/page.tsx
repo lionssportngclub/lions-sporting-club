@@ -167,23 +167,7 @@ export default function Home() {
       Lion's Sporting Club Cricket Tournament
     </h3>
     <span className="bg-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-      Season – 02
-    </span>
-  </div>
-
-  <p className="text-gray-600 mb-4">2024</p>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div className="bg-white rounded-xl p-4">
-      <p className="text-sm text-gray-500">Champion</p>
-      <p className="font-bold text-green-800">Unlimited Friendship</p>
-    </div>
-    <div className="bg-white rounded-xl p-4">
-      <p className="text-sm text-gray-500">Runner-up</p>
-      <p className="font-bold text-gray-800">Lion's Sporting Club</p>
-    </div>
-  </div>
-</div>
+      
       </section>
 {/* TOURNAMENT HISTORY SECTION */}
 <section id="tournament-history" className="py-16 px-4 bg-white">
@@ -212,6 +196,23 @@ export default function Home() {
       </div>
     </div>
   </div>
+  Season – 02
+    </span>
+  </div>
+
+  <p className="text-gray-600 mb-4">2024</p>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="bg-white rounded-xl p-4">
+      <p className="text-sm text-gray-500">Champion</p>
+      <p className="font-bold text-green-800">Unlimited Friendship</p>
+    </div>
+    <div className="bg-white rounded-xl p-4">
+      <p className="text-sm text-gray-500">Runner-up</p>
+      <p className="font-bold text-gray-800">Lion's Sporting Club</p>
+    </div>
+  </div>
+</div>
 </section>
       <section id="committee" className="px-6 py-14 bg-white">
         <h2 className="text-2xl font-bold text-green-900 text-center">
